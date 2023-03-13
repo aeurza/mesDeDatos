@@ -57,7 +57,7 @@ print(planet['name'])
 # Aunque el comportamiento de get y los corchetes ([ ]) suele ser el mismo para recuperar elementos, hay una diferencia principal. Si una clave no está disponible, get devuelve None y [ ] genera un error KeyError.
 
 wibble = planet.get('wibble') # * Returns None
-wibble = planet['wibble'] # * Throws KeyError
+# wibble = planet['wibble'] # * Throws KeyError
 
 # !Modificación de valores de diccionario
 # También puede modificar valores dentro de un objeto de diccionario, con el método update. Este método acepta un diccionario como parámetro y actualiza los valores existentes con los nuevos que proporcione. Si quiere cambiar name para el diccionario planet, puede usar lo siguiente, por ejemplo:
@@ -132,5 +132,4 @@ planet['diameter (km)'] = {
 # Para recuperar valores en un diccionario anidado, debe encadenar corchetes o llamadas a get.
 
 print(f'{planet["name"]} polar diameter: {planet["diameter (km)"]["polar"]}')
-
 #* Output: Jupiter polar diameter: 133709
