@@ -149,4 +149,4 @@ regular_satellite_moons.sort(reverse=True)
 print("The regular satellite moons of Jupiter are", regular_satellite_moons)
 
 # Output
-# The regular satellite moons of Jupiter are ['Thebe', 'Metis', 'Io', 'Ganymede', 'Europa', 'Callisto', 'Amalthea', 'Adrastea']
+# The regular satellite moons of Jupiter are ['Thebe', 'Metis', 'Io', 'Ganymede', 'Europa', 'Callisto', 'Amalthea', 'Adrastea']r
