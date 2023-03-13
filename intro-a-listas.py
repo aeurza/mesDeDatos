@@ -107,3 +107,46 @@ print(sorted(gravity_on_planets))
 print(sorted(gravity_on_planets,reverse=True))
 
 
+# SLICES
+
+planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+planets_before_earth = planets[0:2] # aquí e indica el rango de trabajo  es decir... queremos que se muestre la lista desde la posición 0 hasta la n-1 [n-1 = 2-1]
+print(planets_before_earth)
+# Output: ['Mercury', 'Venus']
+
+# de igual forma si no  indicamos donde termina tomara en cuenta esta el ultimo item de la lista.
+
+planets_after_earth = planets[3:]
+print(planets_after_earth)
+
+# Output
+# ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+
+###############################################
+
+# Combinación de listas
+# Ha visto cómo puede usar segmentaciones para dividir listas, pero ¿qué sucede con unirlas de nuevo?
+
+# Para unir dos listas, debe usar el otro operador (+) con dos listas para devolver una nueva.
+
+amalthea_group = ["Metis", "Adrastea", "Amalthea", "Thebe"]
+galilean_moons = ["Io", "Europa", "Ganymede", "Callisto"]
+
+regular_satellite_moons = amalthea_group + galilean_moons
+print("The regular satellite moons of Jupiter are", regular_satellite_moons)
+
+# Output
+# The regular satellite moons of Jupiter are ['Metis', 'Adrastea', 'Amalthea', 'Thebe', 'Io', 'Europa', 'Ganymede', 'Callisto']
+
+# Ordenación de listas...
+
+regular_satellite_moons.sort()
+print("The regular satellite moons of Jupiter are", regular_satellite_moons)
+
+# Output
+# The regular satellite moons of Jupiter are ['Adrastea', 'Amalthea', 'Callisto', 'Europa', 'Ganymede', 'Io', 'Metis', 'Thebe']
+regular_satellite_moons.sort(reverse=True)
+print("The regular satellite moons of Jupiter are", regular_satellite_moons)
+
+# Output
+# The regular satellite moons of Jupiter are ['Thebe', 'Metis', 'Io', 'Ganymede', 'Europa', 'Callisto', 'Amalthea', 'Adrastea']
