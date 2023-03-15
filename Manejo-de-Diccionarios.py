@@ -132,4 +132,60 @@ planet['diameter (km)'] = {
 # Para recuperar valores en un diccionario anidado, debe encadenar corchetes o llamadas a get.
 
 print(f'{planet["name"]} polar diameter: {planet["diameter (km)"]["polar"]}')
-#* Output: Jupiter polar diameter: 133709
+#* Output: Jupiter polar diameter: 133709ls
+
+# !Programación dinámica con diccionarios
+
+
+# En el programa, quiere realizar varios cálculos, como el del número total de lunas. Además, a medida que progrese en programación más avanzada, es posible que compruebe que carga este tipo de información desde archivos o una base de datos, en lugar de programar directamente en Python.
+
+# Para ayudar a admitir estos escenarios, Python le permite tratar las claves y los valores dentro de un diccionario como una lista. Puede determinar de manera dinámica las claves y los valores, y realizar varios cálculos.
+
+# Imagine un diccionario en el que se almacenan cantidades mensuales de precipitaciones. Es probable que tenga claves para cada mes y las precipitaciones asociadas. Quiere sumar el total de precipitaciones y escribir el código para realizar la operación mediante cada clave individual sería bastante tedioso.
+# !Recuperación de todas las claves y valores
+
+# El método keys() #devuelve un objeto de lista que contiene todas las claves. Puede usar este método para iterar por todos los elementos del diccionario.
+
+# Imagine que tiene el siguiente diccionario, en el que se almacenan los últimos tres meses de precipitaciones.
+
+rainfall = {
+    'october': 3.5,
+    'november': 4.2,
+    'december': 2.1
+}
+
+# Imagine que quiere mostrar la lista de todas las precipitaciones. Puede escribir el nombre de cada mes, pero resultará tedioso.
+
+for key in rainfall.keys():
+    print(f'{key}: {rainfall[key]}cm')
+
+# Output:
+# october: 3.5cm
+# november: 4.2cm
+# december: 2.1cm
+
+# !Determinación de la existencia de una clave en un diccionario
+
+# Al actualizar un valor en un diccionario, Python sobrescribirá el valor existente o creará uno, si la clave no existe. Si quiere agregar a un valor en lugar de sobrescribirlo, puede comprobar si la clave existe mediante in. Por ejemplo, si quiere agregar un valor a diciembre o crear uno si no existe, puede usar lo siguiente:
+
+if 'december' in rainfall:
+    rainfall['december'] = rainfall['december'] + 1
+else:
+    rainfall['december'] = 1
+
+#* Because december exists, the value will be 3.1
+
+# !Recuperación de todos los valores
+
+# De forma similar a keys(), values() devuelve la lista de todos los valores de un diccionario sin sus claves correspondientes. values() puede resultar útil cuando se usa la clave con fines de etiquetado, como en el ejemplo anterior, en el que las claves son el nombre del mes. Puede usar para values() determinar el importe total de las precipitaciones:
+
+
+total_rainfall = 0
+for value in rainfall.values():
+    total_rainfall = total_rainfall + value
+
+print(f'There was {total_rainfall}cm in the last quarter')
+
+# *Output:
+# *There was 10.8cm in the last quarter
+
