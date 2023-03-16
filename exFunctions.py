@@ -9,3 +9,12 @@
 # # Create a function named generate_report. The function will take three parameters named main_tank, external_tank and hydrogen_tank. When run, the function will display output which resembles the following:
 
 def generate_report(main_tank, external_tank,hydrogen_tank):
+    output = f"""
+    Main tank: {main_tank}
+    External tank: {external_tank}
+    Hydrogen tank: {hydrogen_tank}
+    """
+
+    print(output)
+
+generate_report(80,70,75)
