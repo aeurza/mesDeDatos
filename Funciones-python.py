@@ -131,3 +131,7 @@ def days_to_complete(distance, speed):
 
 >>> round(days_to_complete(238855, 75))
 133
+
+#  ^Sugerencia
+
+# ^Aunque pasar funciones directamente a otras funciones como entrada es útil, existe la posibilidad de que se reduzca la legibilidad. Este patrón es especialmente problemático cuando las funciones requieren muchos argumentos.
