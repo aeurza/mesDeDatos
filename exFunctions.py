@@ -1,3 +1,4 @@
+import time
 # Exercise: Work with arguments in functions
 # Required arguments in functions are used when functions need those arguments to work properly. In this exercise, you'll construct a fuel report that requires information from several fuel locations throughout the rocket ship.
 
@@ -9,12 +10,23 @@
 # # Create a function named generate_report. The function will take three parameters named main_tank, external_tank and hydrogen_tank. When run, the function will display output which resembles the following:
 
 def generate_report(main_tank, external_tank,hydrogen_tank):
+    
+    
+    # time.sleep(3)
     output = f"""
     Main tank: {main_tank}
     External tank: {external_tank}
     Hydrogen tank: {hydrogen_tank}
     """
 
+    print("The report of the ship is: ")
+    time.sleep(1)
+    print(".")
+    time.sleep(1)
+    print(".")
+    time.sleep(1)
+    print(".")
+    time.sleep(2)
     print(output)
 
 generate_report(80,70,75)
