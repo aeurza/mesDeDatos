@@ -206,3 +206,76 @@ def variable_length(*args):
 # ^Nota
 
 # ^No es necesario denominar a los argumentos de variable args. Puede usar cualquier nombre de variable válido. Aunque es habitual ver *args o *a, debe intentar usar la misma convención en un proyecto.
+
+# En este caso, *args indica a la función que acepte cualquier número de argumentos (incluido 0). En la función, args ahora está disponible como la variable que contiene todos los argumentos como una tupla. Pruebe la función pasando cualquier número o tipo de argumentos:
+
+>>> variable_length()
+()
+>>> variable_length("one", "two")
+('one', 'two')
+>>> variable_length(None)
+(None,)
+
+# Como puede ver, no hay ninguna restricción en el número o tipo de argumentos que se pasan.
+
+# Un cohete realiza varios pasos antes de un lanzamiento. En función de las tareas o retrasos, estos pasos pueden tardar más de lo previsto. Vamos a crear una función de longitud variable que pueda calcular cuántos minutos quedan hasta el inicio, dado el tiempo que va a tardar cada paso:
+
+def sequence_time(*args):
+    total_minutes = sum(args)
+    if total_minutes < 60:
+        return f"Total time to launch is {total_minutes} minutes"
+    else:
+        return f"Total time to launch is {total_minutes/60} hours"
+    
+    # Pruebe la función pasando cualquier número de minutos:
+
+
+>>> sequence_time(4, 14, 18)
+'Total time to launch is 36 minutes' 
+>>> sequence_time(4, 14, 48)
+'Total time to launch is 1.1 hours'
+
+# ^ Nota
+
+# ^Cuando se usan argumentos de variable, a cada valor ya no se le asigna un nombre de variable. Todos los valores ahora forman parte del nombre de variable catch-all que usa el asterisco (en estos ejemplos, args).
+
+# !Argumentos de palabra clave variable
+# Para que una función acepte cualquier número de argumentos de palabra clave, debe usar una sintaxis similar. En este caso, se requiere un asterisco doble:
+
+def variable_length(**kwargs):
+    print(kwargs)
+
+# Pruebe la función de ejemplo, que imprime los nombres y valores pasados como kwargs:
+
+>>> variable_length(tanks=1, day="Wednesday", pilots=3)
+{'tanks': 1, 'day': 'Wednesday', 'pilots': 3}
+
+# Si ya conoce bien los diccionarios de Python, observará que los argumentos de palabra clave de longitud variable se asignan como un diccionario. Para interactuar con las variables y los valores, use las mismas operaciones que un diccionario.
+
+# ^ Nota
+
+# ^Al igual que con los argumentos de variable, no es necesario usar kwargs cuando se usan argumentos de palabra clave variable. Puede usar cualquier nombre de variable válido. Aunque es habitual ver **kwargs o **kw, debe intentar usar la misma convención en un proyecto.
+
+# En esta función, vamos a usar argumentos de palabra clave variable para notificar los astronautas asignados a la misión. Dado que esta función permite cualquier número de argumentos de palabra clave, se puede reutilizar independientemente del número de astronautas asignados:
+
+def crew_members(**kwargs):
+    print(f"{len(kwargs)} astronauts assigned for this mission:")
+    for title, name in kwargs.items():
+        print(f"{title}: {name}")
+
+# Pruébalo con la tripulación del Apolo 11:
+
+
+>>> crew_members(captain="Neil Armstrong", pilot="Buzz Aldrin", command_pilot="Michael Collins")
+# *3 astronauts assigned for this mission:
+# *captain: Neil Armstrong
+# *pilot: Buzz Aldrin
+# *command_pilot: Michael Collins
+
+# Dado que puede pasar cualquier combinación de argumentos de palabra clave, asegúrese de evitar palabras clave repetidas. Las palabras clave repetidas producirán un error:
+
+>>> crew_members(captain="Neil Armstrong", pilot="Buzz Aldrin", pilot="Michael Collins")
+  File "<stdin>", line 1
+SyntaxError: keyword argument repeated: pilot
+
+
