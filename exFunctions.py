@@ -30,3 +30,8 @@ def generate_report(main_tank, external_tank,hydrogen_tank):
     print(output)
 
 generate_report(80,70,75)
+
+# ......................................................
+
+
+# !Exercise: Work with keyword arguments in functions
